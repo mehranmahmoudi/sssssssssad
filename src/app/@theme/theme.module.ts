@@ -4,7 +4,6 @@ import {
   NbActionsModule,
   NbLayoutModule,
   NbMenuModule,
-  NbSearchModule,
   NbSidebarModule,
   NbUserModule,
   NbContextMenuModule,
@@ -20,32 +19,17 @@ import { NbSecurityModule } from '@nebular/security';
 import {
   FooterComponent,
   HeaderComponent,
-  SearchInputComponent,
-  TinyMCEComponent,
 } from './components';
 import {
-  CapitalizePipe,
-  PluralPipe,
-  RoundPipe,
-  TimingPipe,
-  NumberWithCommasPipe,
-} from './pipes';
-import {
-  OneColumnLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
+  OneColumnLayoutComponent
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
-import { COSMIC_THEME } from './styles/theme.cosmic';
-import { CORPORATE_THEME } from './styles/theme.corporate';
-import { DARK_THEME } from './styles/theme.dark';
 
 const NB_MODULES = [
   NbLayoutModule,
   NbMenuModule,
   NbUserModule,
   NbActionsModule,
-  NbSearchModule,
   NbSidebarModule,
   NbContextMenuModule,
   NbSecurityModule,
@@ -57,24 +41,13 @@ const NB_MODULES = [
 const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
-  SearchInputComponent,
-  TinyMCEComponent,
-  OneColumnLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
-];
-const PIPES = [
-  CapitalizePipe,
-  PluralPipe,
-  RoundPipe,
-  TimingPipe,
-  NumberWithCommasPipe,
+  OneColumnLayoutComponent
 ];
 
 @NgModule({
   imports: [CommonModule, ...NB_MODULES],
-  exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES],
+  exports: [CommonModule, ...COMPONENTS],
+  declarations: [...COMPONENTS],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {
@@ -85,7 +58,7 @@ export class ThemeModule {
           {
             name: 'default',
           },
-          [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
+          [ DEFAULT_THEME ],
           undefined,
           NbLayoutDirection.RTL  
         ).providers,

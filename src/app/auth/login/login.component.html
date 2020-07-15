@@ -25,12 +25,8 @@
            #email="ngModel"
            name="email"
            id="input-email"
-           pattern=".+@.+\..+"
            placeholder="Email address"
-           autofocus
-           [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
-           [required]="getConfigValue('forms.validation.email.required')"
-           [attr.aria-invalid]="email.invalid && email.touched ? true : null">
+           autofocus>
     <ng-container *ngIf="email.invalid && email.touched">
       <p class="error-message" *ngIf="email.errors?.required">
         Email is required!
