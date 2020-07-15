@@ -54,7 +54,6 @@
     "ionicons": "2.0.1",
     "leaflet": "1.2.0",
     "nebular-icons": "1.1.0",
-    "ng2-ckeditor": "^1.2.2",
     "ng2-smart-table": "^1.6.0",
     "ngx-echarts": "^4.2.2",
     "node-sass": "^4.14.1",
@@ -100,7 +99,6 @@
     "stylelint": "7.13.0",
     "ts-node": "3.2.2",
     "tslint": "^5.7.0",
-    "tslint-language-service": "^0.9.9",
     "typescript": "3.7.5"
   }
 }
